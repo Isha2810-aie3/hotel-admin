@@ -6,17 +6,6 @@ This is a Laravel-based admin panel for managing a resort.
 
 This is a Laravel-based admin panel for managing a resort.
 
-## login
-![Login](screenshots/login.png)
-
-## Dashboard
-![Dashboard](screenshots/dashboard.png)
-
-## Room Management
-![Rooms](screenshots/rooms.png)
-
-## Payments
-![Payments](screenshots/service.png)
 
 ## Features
 
