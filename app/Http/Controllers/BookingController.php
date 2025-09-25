@@ -2,28 +2,61 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Booking;
 use Illuminate\Http\Request;
-
+use App\Models\Booking;
 class BookingController extends Controller
 {
+    // Show the booking form
+    public function create()
+    {
+        return view('bookings.create');
+    }
+
+    public function service()
+    {
+        // Example: return a view
+        return view('bookings.service');
+    }
+
+    // Store booking in DB
     public function store(Request $request)
     {
         $request->validate([
-            'user_id' => 'required|exists:users,id',
-            'room_id' => 'required|exists:rooms,id',
-            'check_in' => 'required|date',
-            'check_out' => 'required|date|after:check_in',
-            'room_total' => 'required|numeric',
-            'service_details' => 'nullable|string',
-            'service_total' => 'required|numeric',
-            'total_price' => 'required|numeric',
-            'status' => 'required|in:pending,confirmed,completed',
-            'payment' => 'required|in:paid,unpaid',
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'address' => 'required|string',
+            'phone' => 'required|string',
+            'email' => 'required|email',
+            'arrival' => 'required|date',
+            'departure' => 'required|date',
+            'adults' => 'required|integer',
+            'kids' => 'nullable|integer',
+            'payment' => 'required|string',
+            'total_amount' => 'required|numeric',
         ]);
 
-        Booking::create($request->all());
+        // Save to database
+        $booking = \App\Models\Booking::create($request->all());
 
-        return redirect()->route('bookings.index')->with('success', 'Booking added successfully!');
+        // Redirect to payment page with total
+        return redirect()->route('payment.page', ['total' => $booking->total_amount]);
+    }
+
+    // Show payment page
+    public function payment(Request $request)
+    {
+        // Get total from query string
+        $total = $request->query('total', 0);
+
+        return view('payment', compact('total'));
+    }
+
+    public function showAll()
+    {
+        // Get all bookings from database
+        $bookings = Booking::all();
+
+        // Pass data to the view
+        return view('bookings', compact('bookings'));
     }
 }

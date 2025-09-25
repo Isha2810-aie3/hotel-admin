@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>@yield('title','Admin')</title>
-
+  
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -40,12 +40,7 @@
 </head>
 <body>
   <!-- Background Slider -->
-  <div class="bg-slider">
-    <img src="{{ asset('storage/vanvaso1.webp') }}" class="active">
-    <img src="{{ asset('storage/vanvaso2') }}">
-    <img src="{{ asset('storage/vanvaso3.jpg') }}">
-  </div>
-
+  
   <div class="content">
     @yield('content')
   </div>

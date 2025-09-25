@@ -6,33 +6,28 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void {
-        if (!Schema::hasTable('bookings')) {
-            Schema::create('bookings', function (Blueprint $table) {
-                $table->id('booking_id'); // use booking_id instead of id
-                $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-                $table->foreignId('room_id')->constrained('rooms')->onDelete('cascade');
-                $table->date('check_in');
-                $table->date('check_out');
-                $table->decimal('room_total', 8, 2);
-                $table->text('service_details');
-                $table->decimal('service_total', 8, 2);
-                $table->decimal('total_price', 8, 2);
-                $table->enum('status', ['pending','confirmed','completed']);
-                $table->enum('payment', ['paid','unpaid']);
-                $table->timestamps();
-            });
-        }
+    public function up()
+    {
+        Schema::create('bookings', function (Blueprint $table) {
+            $table->id();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('address');
+            $table->string('phone');
+            $table->string('email');
+            $table->dateTime('arrival');
+            $table->dateTime('departure');
+            $table->integer('adults');
+            $table->integer('kids')->default(0);
+            $table->string('payment');
+            $table->json('rooms')->nullable();
+            $table->decimal('total_amount', 10, 2);
+            $table->text('requests')->nullable();
+            $table->timestamps();
+        });
     }
 
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('bookings');
     }
