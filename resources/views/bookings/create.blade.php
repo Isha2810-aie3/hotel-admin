@@ -29,7 +29,7 @@ body {
     box-shadow: 0 8px 30px rgba(0,0,0,0.2);
 }
 h1 { text-align: center; margin-bottom: 20px; }
-.form-row { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 15px; }
+.form-row { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 12px; }
 .form-group { flex: 1 1 45%; display: flex; flex-direction: column; }
 .form-group.full-width { flex: 1 1 100%; }
 label { margin-bottom: 5px; font-weight: 500; }
@@ -120,29 +120,77 @@ button:hover { background-color: #0056b3; }
 
         <!-- Rooms -->
         <div class="rooms">
-            <label>My Products</label>
-            <div class="room-option">
-                <input type="checkbox" name="rooms[Deluxe][selected]" class="room" data-price="2000" checked>
-                <span>Deluxe (₹ 2000)</span>
-                <input type="number" name="rooms[Deluxe][qty]" class="room-qty" value="1" min="1">
+            <label>Rooms</label>
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="room-option">
+                        <input type="checkbox" name="rooms[Deluxe][selected]" class="room" data-price="2000" checked>
+                        <span>Deluxe (₹ 2000)</span>
+                        <input type="number" name="rooms[Deluxe][qty]" class="room-qty" value="1" min="1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="room-option">
+                        <input type="checkbox" name="rooms[Suite][selected]" class="room" data-price="2500">
+                        <span>Suite (₹ 2500)</span>
+                        <input type="number" name="rooms[Suite][qty]" class="room-qty" value="1" min="1">
+                    </div>
+                </div>
             </div>
-            
-            <div class="room-option">
-                <input type="checkbox" name="rooms[Suite][selected]" class="room" data-price="2500">
-                <span>Suite (₹ 2500)</span>
-                <input type="number" name="rooms[Suite][qty]" class="room-qty" value="1" min="1">
-            </div>
-            <div class="room-option">
-                <input type="checkbox" name="rooms[Villa][selected]" class="room" data-price="3000">
-                <span>Villa (₹ 3000)</span>
-                <input type="number" name="rooms[Villa][qty]" class="room-qty" value="1" min="1">
-            </div>
-            <div class="room-option">
-                <input type="checkbox" name="rooms[Standard][selected]" class="room" data-price="3500">
-                <span>Standard (₹ 3500)</span>
-                <input type="number" name="rooms[Standard][qty]" class="room-qty" value="1" min="1">
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="room-option">
+                        <input type="checkbox" name="rooms[Villa][selected]" class="room" data-price="3000">
+                        <span>Villa (₹ 3000)</span>
+                        <input type="number" name="rooms[Villa][qty]" class="room-qty" value="1" min="1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="room-option">
+                        <input type="checkbox" name="rooms[Standard][selected]" class="room" data-price="3500">
+                        <span>Standard (₹ 3500)</span>
+                        <input type="number" name="rooms[Standard][qty]" class="room-qty" value="1" min="1">
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="rooms">
+            <label>Services</label>
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="room-option">
+                        <input type="checkbox" name="services[swimming_pool][selected]" class="room" data-price="500">
+                        <span>Swimming Pool Access (₹ 500)</span>
+                        <input type="number" name="services[swimming_pool][qty]" class="room-qty" value="1" min="1">
+                    </div>
+                </div>   
+                <div class="form-group">             
+                    <div class="room-option">
+                        <input type="checkbox" name="services[yoga][selected]" class="room" data-price="800">
+                        <span>Yoga & Meditation (₹ 800)</span>
+                        <input type="number" name="services[yoga][qty]" class="room-qty" value="1" min="1">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="room-option">
+                        <input type="checkbox" name="services[adventure][selected]" class="room" data-price="1500">
+                        <span>Adventure Activities (₹ 1,500)</span>
+                        <input type="number" name="services[adventure][qty]" class="room-qty" value="1" min="1">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="room-option">
+                        <input type="checkbox" name="services[kids_play][selected]" class="room" data-price="300">
+                        <span>Kids’ Play Zone (₹ 300)</span>
+                        <input type="number" name="services[kids_play][qty]" class="room-qty" value="1" min="1">
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Total -->
         <div class="total">Total: ₹ <span id="totalAmount">0</span></div>

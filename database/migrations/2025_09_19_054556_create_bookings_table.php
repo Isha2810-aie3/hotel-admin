@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('kids')->default(0);
             $table->string('payment');
             $table->json('rooms')->nullable();
+            $table->json('services')->nullable();
             $table->decimal('total_amount', 10, 2);
             $table->text('requests')->nullable();
             $table->timestamps();

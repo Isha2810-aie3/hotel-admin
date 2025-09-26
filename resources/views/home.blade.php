@@ -221,25 +221,25 @@
             <div class="col-md-3">
                 <div class="property-card" style="background-image: url('../images/sw.jpg');">
                     <h3>Swimming Pool</h3>  
-                    <a href="{{ route('bookings.service') }}">Book Now</a>                  
+                    <a href="{{ route('bookings.create') }}">Book Now</a>                  
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="property-card" style="background-image: url('../images/yoga.jpg');">
                     <h3>Yoga & Meditation</h3>  
-                    <a href="{{ route('bookings.service') }}">Book Now</a>                 
+                    <a href="{{ route('bookings.create') }}">Book Now</a>                 
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="property-card" style="background-image: url('../images/kids.jpg');">
                     <h3>Kids’ Play Zone</h3>  
-                    <a href="{{ route('bookings.service') }}">Book Now</a>                  
+                    <a href="{{ route('bookings.create') }}">Book Now</a>                  
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="property-card" style="background-image: url('../images/adv.jpg');">
                     <h3>Adventure Activities</h3>      
-                    <a href="{{ route('bookings.service') }}">Book Now</a>              
+                    <a href="{{ route('bookings.create') }}">Book Now</a>              
                 </div>
             </div>
         </div>
